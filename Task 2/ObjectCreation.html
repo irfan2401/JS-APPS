@@ -1,0 +1,75 @@
+app1.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>large student object</title>
+</head>
+
+<body>
+    <script>
+        let student =
+        {
+            id: 1,
+            name: { firstName: "Shaik", lastName: "Irfan" },
+            salary: 15000,
+            address: {
+                hno: '5-12',
+                street: "Madhapur, 100-feet road",
+                city: "Hyderabad",
+                pin: '500081',
+                state: "Telangana",
+                country: "india",
+                location: {
+                lat: 17.445432308989982, long: 78.44293127751004
+            }
+        },
+            account: [{
+                accountnum: '123456789',
+                amount: '1000000',
+                bankname: "asd",
+                ifsc: '112233445',
+            },
+                {
+                    accountnum: '987654321',
+                    amount: '7000000',
+                    bankname: "fgh",
+                    ifsc: '556677889',
+                }],
+            expereince: [
+                {
+                    company: "Cognizant",
+                    dor: "1/1/2020"
+                },
+                {
+                    company: "TCS",
+                    dor: "1/2/2025"
+                }
+            ],
+            education: [
+                {
+                    board: "jntuk",
+                    degree: "B.tech",
+                    percentage: '75%',
+                    year: '2025',
+                },
+                {
+                    board: "bie",
+                    degree: "INTER",
+                    percentage: '91%',
+                    year: '2025',
+                },
+                {
+                    board: "bse",
+                    degree: "SSC",
+                    percentage: '81%',
+                    year: '2025',
+                }
+            ],
+        };
+        console.log(student);
+
+    </script>
+</body>
+
+</html>
