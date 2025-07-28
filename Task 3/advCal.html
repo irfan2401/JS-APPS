@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            margin: 10px;
+            padding: 8px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function getInputValues() {
+            const val1 = parseFloat(document.getElementById("id1").value);
+            const val2 = parseFloat(document.getElementById("id2").value);
+            if (isNaN(val1) || isNaN(val2)) {
+                return null;
+            }
+            return { val1, val2 };
+        }
+
+        function showResult(result) {
+            document.getElementById("output").innerText = `Result = ${result}`;
+        }
+
+        function doSum() {
+            const values = getInputValues();
+            if (!values) return showResult("Invalid input");
+            showResult(values.val1 + values.val2);
+        }
+
+        function doSub() {
+            const values = getInputValues();
+            if (!values) return showResult("Invalid input");
+            showResult(values.val1 - values.val2);
+        }
+
+        function doMul() {
+            const values = getInputValues();
+            if (!values) return showResult("Invalid input");
+            showResult(values.val1 * values.val2);
+        }
+
+        function doDiv() {
+            const values = getInputValues();
+            if (!values) return showResult("Invalid input");
+            if (values.val2 === 0) return showResult("Cannot divide by zero");
+            showResult(values.val1 / values.val2);
+        }
+
+        function doMdldiv() {
+            const values = getInputValues();
+            if (!values) return showResult("Invalid input");
+            if (values.val2 === 0) return showResult("Cannot divide by zero");
+            showResult(values.val1 % values.val2);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Mini Calculator</h2>
+    <input type="text" placeholder="Enter the first number" id="id1" />
+    <input type="text" placeholder="Enter the second number" id="id2" />
+    <br />
+    <button onclick="doSum()">ADD</button>
+    <button onclick="doSub()">SUB</button>
+    <button onclick="doMul()">MUL</button>
+    <button onclick="doDiv()">DIV</button>
+    <button onclick="doMdldiv()">MOD</button>
+    <div id="output">Result =</div>
+</body>
+
+</html>
